@@ -2,8 +2,8 @@
 
 -  Open IDE and create environment
 -  clone git repository `https://github.com/Leanse1/Face-Recognition-Attendance-System.git`
--  `pip install -r requirements.txt'
--  run `streamlit run home.py'
+-  `pip install -r requirements.txt`
+-  run `streamlit run home.py`
 
   
 ## DEMO
