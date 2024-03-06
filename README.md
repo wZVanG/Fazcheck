@@ -1,13 +1,14 @@
 ## Usage
 
--  clone git repository ''.
--  In `predict.py` file add price for dataset you want to sum up
--  Run the program.
+-  Open IDE and create environment
+-  clone git repository `https://github.com/Leanse1/Face-Recognition-Attendance-System.git`
+-  `pip install -r requirements.txt'
+-  run `streamlit run home.py'
 
   
 ## DEMO
 
-This is a prototype on how computer vision will scan objects and calculate price
+How website will look like after connecting with EC2 instance
 
 ![download (35)](https://github.com/Leanse1/Amazon-Go-Prototype/assets/138543566/448e44dd-4a50-43ff-9c75-03cb80d9acbd)
 
