@@ -47,7 +47,7 @@ def guardar_rostro(ruta_imagen):
 
 ruta_carpeta = "/".join(__file__.split("/")[:-1])
 
-guardar_rostro(f"{ruta_carpeta}/caras/1_45897437")
+guardar_rostro(f"{ruta_carpeta}/caras/1_77346499")
 
 # Cerrar la conexión a Redis
 r.close()
