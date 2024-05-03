@@ -6,7 +6,7 @@ from streamlit_webrtc import webrtc_streamer
 import av
 
 
-st.set_page_config(page_title='Registration Form')
+# st.set_page_config(page_title='Registration Form')
 st.subheader('Registration Form')
 
 ## init registration form
@@ -31,7 +31,11 @@ def video_callback_func(frame):
     
     return av.VideoFrame.from_ndarray(reg_img,format='bgr24')
 
-webrtc_streamer(key='registration',video_frame_callback=video_callback_func)
+webrtc_streamer(key='registration',video_frame_callback=video_callback_func,
+rtc_configuration={
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+    }
+)
 
 
 # step-3: save the data in redis database

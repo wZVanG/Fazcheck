@@ -4,7 +4,7 @@ from streamlit_webrtc import webrtc_streamer
 import av
 import time
 
-st.set_page_config(page_title='Predictions')
+# st.set_page_config(page_title='Predictions')
 st.subheader('Real-Time Attendance System')
 
 
@@ -42,7 +42,8 @@ def video_frame_callback(frame):
     return av.VideoFrame.from_ndarray(pred_img, format="bgr24")
 
 
-webrtc_streamer(key="realtimePrediction", video_frame_callback=video_frame_callback)
-rtc_configuration={  # Add this config
-       "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+webrtc_streamer(key="realtimePrediction", video_frame_callback=video_frame_callback,
+rtc_configuration={
+        "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
     }
+)

@@ -1,6 +1,7 @@
 import numpy as np
 import pandas as pd
 import cv2
+
 import redis
 
 # insight face
@@ -9,16 +10,26 @@ from sklearn.metrics import pairwise
 # time
 import time
 from datetime import datetime
+
 import os
 
+
+
+
 # Connect to Redis Client
-hostname = ''
-portnumber = 
+hostname = '127.0.0.1'
+portnumber = 6379
 password = ''
 
 r = redis.StrictRedis(host=hostname,
-                      port=portnumber,
-                      password=password)
+                      port=portnumber)
+
+def split_name_role(x):
+    if isinstance(x, str):
+        name, role = x.split('@')
+    else:
+        name, role = None, None  # Manejo de valores nulos
+    return pd.Series([name, role], index=['Name', 'Role'])
 
 # Retrive Data from database
 def retrive_data(name):
@@ -30,7 +41,8 @@ def retrive_data(name):
     retrive_series.index = index
     retrive_df =  retrive_series.to_frame().reset_index()
     retrive_df.columns = ['name_role','facial_features']
-    retrive_df[['Name','Role']] = retrive_df['name_role'].apply(lambda x: x.split('@')).apply(pd.Series)
+    # retrive_df[['Name','Role']] = retrive_df['name_role'].apply(lambda x: x.split('@')).apply(pd.Series)
+    retrive_df[['Name', 'Role']] = retrive_df['name_role'].apply(split_name_role)
     return retrive_df[['Name','Role','facial_features']]
 
 

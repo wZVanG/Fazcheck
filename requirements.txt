@@ -1,9 +1,11 @@
-numpy
+numpy==1.23.5
 pandas
 redis
-opencv-python-headless  #to deploy in cloud
+opencv-python
+opencv-python-headless
 scikit-learn
 streamlit
 streamlit-webrtc
 insightface
 onnxruntime
+tensorflow
