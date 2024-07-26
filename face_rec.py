@@ -1,7 +1,6 @@
 import numpy as np
 import pandas as pd
 import cv2
-
 import redis
 
 # insight face
@@ -10,19 +9,15 @@ from sklearn.metrics import pairwise
 # time
 import time
 from datetime import datetime
-
 import os
-
-
-
 
 # Connect to Redis Client
 hostname = '127.0.0.1'
 portnumber = 6379
 password = ''
 
-r = redis.StrictRedis(host=hostname,
-                      port=portnumber)
+
+r = redis.StrictRedis(host=hostname, port=portnumber)
 
 def split_name_role(x):
     if isinstance(x, str):

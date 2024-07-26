@@ -40,6 +40,8 @@ def guardar_rostro(ruta_imagen):
     cv2.imwrite(f"caras_detectadas/{nuevo_nombre_archivo}.jpg", rimg)
     print(f"Imagen de {numero_documento} guardada correctamente.")
 
+# def guardar_todos_los_rostros():
+
 
 # Ejemplo de uso
 

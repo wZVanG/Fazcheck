@@ -8,7 +8,11 @@ import time
 
 # Inicializar el modelo de reconocimiento facial
 model = insightface.app.FaceAnalysis(name='buffalo_l',root='insightface_model')
-model.prepare(ctx_id=0)  # Remove the nms parameter
+
+# use GPU
+
+model.prepare(ctx_id=0)
+
 
 nombres_personas = {
     "77346499": "Mercy Ipanaque",
