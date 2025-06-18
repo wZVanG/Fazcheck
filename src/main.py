@@ -16,12 +16,12 @@ def format_time(seconds: float):
 
 def main():
 	# Selecciona el transcriptor
-	transcriber = WhisperTranscriber("base")
+	transcriber = WhisperTranscriber("small")
 
 	path_audios = 'tmp/audios/'
 	patch_transcripciones = 'tmp/transcripciones/'
 
-	transcript_name = "entiende_chatgpt_90minutos.mp3"
+	transcript_name = "Grabación.m4a"
 
 	# Usa el transcriptor bases in transcript_name
 	result = transcriber.transcribe(path_audios + transcript_name)
